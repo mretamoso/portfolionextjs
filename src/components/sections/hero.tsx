@@ -72,10 +72,10 @@ export default function Hero() {
           <div className="space-y-2">
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-6xl font-bold tracking-tight text-white font-sans"
+              className="text-4xl sm:text-6xl font-bold tracking-tight text-white font-sans leading-[1.08] pb-2"
             >
               Hola, soy{" "}
-              <span className="gradient-text block mt-1">{personalInfo.name}</span>
+              <span className="gradient-text block mt-1 pb-1">{personalInfo.name}</span>
             </motion.h1>
             
             <motion.p
