@@ -58,26 +58,46 @@ export default function Experience() {
               <Card className="bg-card border-border hover:border-accent/40 shadow-xl transition-all duration-300 relative group overflow-hidden">
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-transparent opacity-40 group-hover:opacity-100 transition-opacity" />
 
-                <CardContent className="p-6 sm:p-8 space-y-6">
+                 <CardContent className="p-6 sm:p-8 space-y-6">
                   {/* Cabecera de la tarjeta */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border/30 pb-4">
                     <div>
                       <h3 className="text-lg sm:text-xl font-bold text-white font-sans">
                         {exp.role}
                       </h3>
-                      <p className="font-mono text-xs text-primary font-semibold mt-0.5">
-                        {exp.company}
-                      </p>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
+                        <span className="font-mono text-xs text-primary font-semibold">
+                          {exp.company}
+                        </span>
+                        {exp.modality && (
+                          <>
+                            <span className="text-[#B8C2D6]/30 text-xs">•</span>
+                            <span className="font-mono text-[10px] text-[#B8C2D6]/60">
+                              {exp.modality}
+                            </span>
+                          </>
+                        )}
+                        {exp.client && (
+                          <>
+                            <span className="text-[#B8C2D6]/30 text-xs">•</span>
+                            <span className="font-mono text-[10px] text-[#B8C2D6]/60">
+                              Cliente: {exp.client}
+                            </span>
+                          </>
+                        )}
+                      </div>
                     </div>
-                    <span className="font-mono text-xs px-3 py-1 rounded bg-[#101A30] border border-border text-[#B8C2D6]/85 w-fit">
+                    <span className="font-mono text-xs px-3 py-1 rounded bg-[#101A30] border border-border text-[#B8C2D6]/85 w-fit h-fit">
                       {exp.period}
                     </span>
                   </div>
 
                   {/* Descripción de la empresa */}
-                  <p className="text-sm sm:text-base text-[#B8C2D6] font-sans leading-relaxed">
-                    {exp.description}
-                  </p>
+                  {exp.description && (
+                    <p className="text-sm sm:text-base text-[#B8C2D6] font-sans leading-relaxed">
+                      {exp.description}
+                    </p>
+                  )}
 
                   {/* Lista de Responsabilidades */}
                   <div className="space-y-3">
@@ -97,6 +117,20 @@ export default function Experience() {
                       ))}
                     </ul>
                   </div>
+
+                  {/* Tecnologías utilizadas */}
+                  {exp.technologies && (
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-border/20">
+                      {exp.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2.5 py-1 rounded bg-[#101A30]/50 border border-border/40 font-mono text-[10px] text-[#B8C2D6]/60 hover:text-white hover:border-primary/20 transition-all duration-150 cursor-default"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>

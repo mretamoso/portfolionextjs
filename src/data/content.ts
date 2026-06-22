@@ -8,10 +8,13 @@ export interface TechnologyGroup {
 
 export interface ExperienceEntry {
   company: string;
-  description: string;
+  description?: string;
   role: string;
   period: string;
   responsibilities: string[];
+  client?: string;
+  modality?: string;
+  technologies?: string[];
 }
 
 export interface ImpactCaseStudy {
@@ -52,9 +55,11 @@ export const portfolioContent = {
     tagline: "Construyendo sistemas que escalan. Resolviendo problemas que importan.",
     location: "Lima, Perú",
     availability: "Disponible para oportunidades remotas / híbridas",
-    email: "miguel.retamoso.infante@gmail.com",
-    linkedin: "https://www.linkedin.com/in/miguel-retamoso-infante",
-    github: "https://github.com/miguelretamoso",
+    email: "miguelretamosoin@gmail.com",
+    linkedin: "https://www.linkedin.com/in/miguel-alonso-retamoso-infante-585ba1132",
+    github: "https://github.com/mretamoso",
+    whatsapp: "https://wa.me/51971869708?text=Hola%20Miguel%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo.",
+    whatsappNumber: "+51 971869708",
     cvPath: "/documents/cv-miguel-retamoso.pdf",
     profileImage: "/images/foto-miguel.png",
   },
@@ -119,19 +124,49 @@ export const portfolioContent = {
   ] as TechnologyGroup[],
   experience: [
     {
-      company: "SGS Perú",
-      role: "Desarrollador Full Stack",
-      period: "2021 – Presente",
-      description: "Empresa líder en servicios de inspección y laboratorio. Participación activa en el desarrollo, mantenimiento y mejora continua de aplicaciones empresariales utilizadas en procesos operativos y de laboratorio críticos.",
+      company: "METRICA Perú",
+      role: "Developer Semi Senior .NET",
+      period: "ene. 2026 - Actualidad",
+      modality: "Híbrido",
+      client: "SGS Perú",
       responsibilities: [
-        "Desarrollo y mantenimiento de APIs REST seguras utilizando .NET y ASP.NET Core.",
-        "Optimización de consultas complejas y procedimientos almacenados (Stored Procedures) en SQL Server.",
-        "Diagnóstico y solución ágil de incidencias técnicas en entornos de producción.",
-        "Desarrollo, refactorización y mantenimiento de interfaces y funcionalidades frontend utilizando Angular.",
-        "Integración robusta entre diversas aplicaciones empresariales y servicios internos corporativos.",
-        "Elaboración detallada de documentación técnica para el equipo de desarrollo e implementación de mejoras de procesos.",
-        "Participación directa en fases de pruebas unitarias, despliegues y soporte técnico de segundo nivel."
-      ]
+        "Desarrollo y mantenimiento de APIs REST utilizando .NET y ASP.NET Core.",
+        "Optimización de consultas complejas y Stored Procedures en SQL Server.",
+        "Desarrollo y mantenimiento de funcionalidades frontend utilizando Angular.",
+        "Integración entre aplicaciones empresariales y servicios internos.",
+        "Elaboración de documentación técnica e implementación de mejoras de procesos."
+      ],
+      technologies: [".NET 9", "ASP.NET Core", "Angular", "SQL Server", "REST APIs", "Azure DevOps"]
+    },
+    {
+      company: "SGS Perú",
+      role: "Developer IT",
+      period: "jul. 2025 - jun. 2026",
+      modality: "Remoto",
+      responsibilities: [
+        "Desarrollo y mantenimiento de aplicaciones empresariales orientadas a procesos operativos y de laboratorio.",
+        "Participación en el desarrollo de APIs e integraciones internas.",
+        "Optimización de procesos y soporte evolutivo de plataformas corporativas.",
+        "Mantenimiento de funcionalidades frontend utilizando Angular.",
+        "Participación en pruebas, despliegues y soporte técnico."
+      ],
+      technologies: [".NET Core", "Angular", "SQL Server", "Entity Framework Core", "Azure DevOps"]
+    },
+    {
+      company: "Protiviti Perú",
+      role: "Desarrollador .NET / Application Support N3",
+      period: "mar. 2023 - jul. 2025",
+      modality: "Remoto",
+      client: "SGS Perú",
+      description: "Evolución profesional desde Desarrollador .NET Junior hasta Application Support N3, participando en proyectos de ciberseguridad, mantenimiento de aplicaciones empresariales y resolución de incidencias en producción.",
+      responsibilities: [
+        "Diagnóstico y solución de incidencias técnicas en entornos de producción.",
+        "Soporte especializado Application Support N3 para aplicaciones .NET y Angular.",
+        "Corrección de hallazgos de ciberseguridad reportados por Pentest.",
+        "Debugging y análisis utilizando Swagger, Postman y SQL Server.",
+        "Participación en pruebas, despliegues y soporte técnico."
+      ],
+      technologies: [".NET", "ASP.NET MVC", "Angular", "SQL Server", "Swagger", "Postman"]
     }
   ] as ExperienceEntry[],
   impact: {
